@@ -1,9 +1,9 @@
 import { Grid, GridItem, Todo } from 'components';
 import { useSelector } from 'react-redux';
-import { selectTodos } from 'reduxTodo/selectors';
+import { visibleTodos } from 'reduxTodo/selectors';
 
 export const TodoList = () => {
-  const todos = useSelector(selectTodos);
+  const todos = useSelector(visibleTodos);
   return (
     <Grid>
       {todos.map((todo, counter) => (

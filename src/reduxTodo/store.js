@@ -12,6 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import rootReducer from './sliceTodo';
+import filterReducer from './sliceFilter';
 
 const persistConfig = {
   key: 'todo',
@@ -22,7 +23,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: { todos: persistedReducer },
+  reducer: { todos: persistedReducer,filter:filterReducer},
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
