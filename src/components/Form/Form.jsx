@@ -8,7 +8,7 @@ import { nanoid } from '@reduxjs/toolkit';
 
 export const Form = () => {
   const dispatch = useDispatch();
-  const [text, setText] = useState();
+  const [text, setText] = useState('');
   const handleChange = e => {
     setText(e.target.value);
   };
